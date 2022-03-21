@@ -13,4 +13,4 @@ serverSock.bind((args.ip6, args.port))
 
 while True:
     data, addr = serverSock.recvfrom(1024)
-    print("{0}: {1}".format(datetime.now(), data))
+    print("{0}: {1}".format(datetime.now().strftime("%H:%M:%S"), data))

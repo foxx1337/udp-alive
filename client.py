@@ -13,6 +13,8 @@ MESSAGE = "hello " + args.ip6
 clientSock = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
 
 while True:
-    clientSock.sendto(str.encode(MESSAGE), (args.ip6, args.port))
+    dt = datetime.now()
+    logtime = dt.strftime("%H:%M:%S ")
+    clientSock.sendto(str.encode(logtime + MESSAGE), (args.ip6, args.port))
     print("{0}: sent {1}".format(datetime.now(), MESSAGE))
     time.sleep(1)
