@@ -12,5 +12,6 @@ serverSock = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
 serverSock.bind((args.ip6, args.port))
 
 while True:
+    logtime = datetime.now().strftime("%H:%M:%S")
     data, addr = serverSock.recvfrom(1024)
-    print("{0}: {1}".format(datetime.now().strftime("%H:%M:%S"), data))
+    print("{0}: {1}".format(logtime, data))
